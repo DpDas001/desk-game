@@ -1,0 +1,39 @@
+{
+	"gameInfo": {
+		"currentDay": 1,
+		{
+		"gameStartDate": "2025-09-29",
+		"lastUpdated": "2025-09-29T00:00:00.000Z",
+		"dataVersion": "2.0",
+		"totalDaysTracked": 1
+	},
+	"dailyData": {
+		"2025-09-29": {
+			"day": 1,
+			"players": [
+				{
+					"id": 0,
+					"name": "Andy",
+					"avatar": "🐴 Sir Gallops-a-Lot",
+					"desksBooked": 0,
+					"questionsAnswered": 0,
+					"correctAnswers": 0,
+					"weeklyBookings": [false, false, false, false, false, false, false],
+					"currentStreak": 0,
+					"title": "New Rider"
+				},
+				...existing code...
+			],
+			"desks": [
+				{
+					"id": 0,
+					"available": true,
+					"bookedBy": null,
+					"bookedDay": null,
+					"bookingId": null
+				},
+				...existing code...
+			]
+		}
+	}
+}
