@@ -26,15 +26,19 @@
 		/* ...rest of CSS and all content from desk-derby.html... */
 	</style>
 </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desk Derby Static Site</title>
+  <style>
+	html, body { height: 100%; margin: 0; padding: 0; }
+	body { display: flex; align-items: stretch; justify-content: stretch; height: 100vh; }
+	iframe { border: none; width: 100vw; height: 100vh; }
+  </style>
+</head>
 <body>
-    <div class="container">
-        <!-- Header -->
-        <div class="header">
-            <h1>🐴 Desk Derby: The Lloyds Values Showdown! 🐴</h1>
-            <p>Race to book your desk by mastering Lloyds Banking Group values!</p>
-        </div>
-        <!-- ...rest of desk-derby.html content... -->
-    </div>
-    <!-- ...all scripts from desk-derby.html... -->
+  <iframe src="../desk-derby.html" title="Desk Derby Game"></iframe>
 </body>
 </html>
