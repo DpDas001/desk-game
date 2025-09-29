@@ -3,8 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🐴 Desk Derby: The Lloyds Values Showdown! 🐴</title>
+    <title>🐴 The Lloyds Banking Group -Desk Derby:  🐴</title>
     <style>
+        /* Lloyds Constellation Design System */
+        :root {
+            /* Lloyds Brand Colors */
+            --lloyds-green: #006A4D;
+            --lloyds-dark-green: #004D38;
+            --lloyds-light-green: #00A86B;
+            --lloyds-teal: #009FBF;
+            --lloyds-blue: #0077BE;
+            --lloyds-navy: #003B5C;
+            --lloyds-yellow: #FFD32D;
+            --lloyds-orange: #FF6600;
+            --lloyds-red: #D32F2F;
+            
+            /* Neutrals */
+            --lloyds-white: #FFFFFF;
+            --lloyds-grey-50: #F8F9FA;
+            --lloyds-grey-100: #F1F3F4;
+            --lloyds-grey-200: #E8EAED;
+            --lloyds-grey-300: #DADCE0;
+            --lloyds-grey-400: #BDC1C6;
+            --lloyds-grey-500: #9AA0A6;
+            --lloyds-grey-600: #80868B;
+            --lloyds-grey-700: #5F6368;
+            --lloyds-grey-800: #3C4043;
+            --lloyds-grey-900: #202124;
+            
+            /* Typography */
+            --font-primary: 'SourceSansPro', 'Helvetica Neue', Arial, sans-serif;
+            --font-secondary: 'Helvetica Neue', Arial, sans-serif;
+            
+            /* Spacing */
+            --spacing-xs: 4px;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-xl: 32px;
+            --spacing-xxl: 48px;
+            
+            /* Border Radius */
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-xl: 16px;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -12,238 +63,346 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
+            font-family: var(--font-primary);
+            background: linear-gradient(135deg, var(--lloyds-green) 0%, var(--lloyds-teal) 100%);
+            color: var(--lloyds-white);
             min-height: 100vh;
             overflow-x: hidden;
+            line-height: 1.5;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: var(--spacing-lg);
         }
 
         .header {
             text-align: center;
-            margin-bottom: 30px;
-            animation: bounce 2s infinite;
+            margin-bottom: var(--spacing-xxl);
+            padding: var(--spacing-xl) 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-xl);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .header h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+            color: var(--lloyds-white);
+            text-shadow: none;
         }
 
         .header p {
-            font-size: 1.2em;
-            opacity: 0.9;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
+            font-size: 1.125rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.9);
         }
 
         .game-stats {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xxl);
         }
 
         .stat-card {
-            background: rgba(255,255,255,0.1);
-            border-radius: 15px;
-            padding: 20px;
+            background: var(--lloyds-white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
             text-align: center;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
-            transition: transform 0.3s ease;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--lloyds-grey-200);
+            transition: all 0.3s ease;
+            color: var(--lloyds-grey-800);
         }
 
         .stat-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--lloyds-light-green);
         }
 
         .stat-number {
-            font-size: 2.5em;
-            font-weight: bold;
-            color: #ffd700;
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--lloyds-green);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .stat-card div:last-child {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--lloyds-grey-600);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .desk-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 15px;
-            margin-bottom: 30px;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xxl);
         }
 
         .desk {
-            background: rgba(255,255,255,0.1);
-            border-radius: 10px;
-            padding: 20px;
+            background: var(--lloyds-white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
             text-align: center;
-            border: 2px solid transparent;
+            border: 2px solid var(--lloyds-grey-200);
             transition: all 0.3s ease;
             cursor: pointer;
+            box-shadow: var(--shadow-sm);
+            color: var(--lloyds-grey-800);
         }
 
         .desk.available {
-            border-color: #4CAF50;
-            background: rgba(76, 175, 80, 0.2);
+            border-color: var(--lloyds-light-green);
+            background: var(--lloyds-white);
+        }
+
+        .desk.available:hover {
+            border-color: var(--lloyds-green);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
         }
 
         .desk.booked {
-            border-color: #f44336;
-            background: rgba(244, 67, 54, 0.2);
+            border-color: var(--lloyds-grey-400);
+            background: var(--lloyds-grey-100);
+            color: var(--lloyds-grey-600);
         }
 
         .desk:hover {
-            transform: scale(1.05);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
         }
 
         .desk-icon {
-            font-size: 2em;
-            margin-bottom: 10px;
+            font-size: 2rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .desk div:last-child {
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-top: var(--spacing-xs);
         }
 
         .player-section {
-            margin-bottom: 30px;
+            margin-bottom: var(--spacing-xxl);
+        }
+
+        .player-section h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--lloyds-white);
+            margin-bottom: var(--spacing-lg);
+            text-align: center;
         }
 
         .player-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
         }
 
         .player-card {
-            background: rgba(255,255,255,0.1);
-            border-radius: 10px;
-            padding: 15px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
+            background: var(--lloyds-white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--lloyds-grey-200);
+            transition: all 0.3s ease;
+            color: var(--lloyds-grey-800);
+            cursor: pointer;
+        }
+
+        .player-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--lloyds-light-green);
+        }
+
+        .player-card.selected {
+            border-color: var(--lloyds-green);
+            box-shadow: var(--shadow-lg);
         }
 
         .player-name {
-            font-weight: bold;
-            margin-bottom: 5px;
+            font-weight: 600;
+            margin-bottom: var(--spacing-xs);
+            color: var(--lloyds-green);
         }
 
         .player-stats {
-            font-size: 0.9em;
-            opacity: 0.8;
+            font-size: 0.875rem;
+            color: var(--lloyds-grey-600);
+            line-height: 1.4;
         }
 
         .quiz-section {
-            background: rgba(255,255,255,0.1);
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 30px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
+            background: var(--lloyds-white);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-xxl);
+            margin-bottom: var(--spacing-xxl);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--lloyds-grey-200);
+            color: var(--lloyds-grey-800);
+        }
+
+        .quiz-section h2 {
+            color: var(--lloyds-green);
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+            font-weight: 600;
         }
 
         .question {
-            font-size: 1.3em;
-            margin-bottom: 20px;
+            font-size: 1.25rem;
+            margin-bottom: var(--spacing-xl);
             text-align: center;
+            color: var(--lloyds-grey-800);
+            font-weight: 500;
+            line-height: 1.6;
         }
 
         .answers {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-bottom: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
         }
 
         .answer-btn {
-            background: rgba(255,255,255,0.2);
-            border: 2px solid transparent;
-            border-radius: 10px;
-            padding: 15px;
-            color: white;
+            background: var(--lloyds-grey-50);
+            border: 2px solid var(--lloyds-grey-200);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
+            color: var(--lloyds-grey-800);
             cursor: pointer;
             transition: all 0.3s ease;
-            font-size: 1.1em;
+            font-size: 1rem;
+            font-weight: 500;
+            text-align: left;
+            line-height: 1.4;
         }
 
         .answer-btn:hover {
-            background: rgba(255,255,255,0.3);
-            border-color: #ffd700;
+            background: var(--lloyds-grey-100);
+            border-color: var(--lloyds-light-green);
             transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
         }
 
         .answer-btn.correct {
-            background: rgba(76, 175, 80, 0.3);
-            border-color: #4CAF50;
+            background: #E8F5E8;
+            border-color: var(--lloyds-light-green);
+            color: var(--lloyds-green);
         }
 
         .answer-btn.incorrect {
-            background: rgba(244, 67, 54, 0.3);
-            border-color: #f44336;
+            background: #FFF0F0;
+            border-color: var(--lloyds-red);
+            color: var(--lloyds-red);
         }
 
         .leaderboard {
-            background: rgba(255,255,255,0.1);
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 30px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
+            background: var(--lloyds-white);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-xxl);
+            margin-bottom: var(--spacing-xxl);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--lloyds-grey-200);
+            color: var(--lloyds-grey-800);
         }
 
         .leaderboard h2 {
             text-align: center;
-            margin-bottom: 20px;
-            color: #ffd700;
+            margin-bottom: var(--spacing-xl);
+            color: var(--lloyds-green);
+            font-weight: 600;
         }
 
         .leaderboard-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px;
-            margin-bottom: 10px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 8px;
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-md);
+            background: var(--lloyds-grey-50);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--lloyds-grey-200);
+            transition: all 0.3s ease;
+        }
+
+        .leaderboard-item:hover {
+            background: var(--lloyds-grey-100);
+            border-color: var(--lloyds-light-green);
+        }
+
+        .leaderboard-item:first-child {
+            background: linear-gradient(135deg, #FFD32D22, #FFD32D11);
+            border-color: var(--lloyds-yellow);
         }
 
         .rank {
-            font-weight: bold;
-            color: #ffd700;
+            font-weight: 700;
+            color: var(--lloyds-green);
+            min-width: 40px;
+        }
+
+        .leaderboard-item:first-child .rank {
+            color: #B8860B;
         }
 
         .control-panel {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            margin-bottom: 30px;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-xxl);
+            flex-wrap: wrap;
         }
 
         .btn {
-            background: linear-gradient(45deg, #ffd700, #ffed4e);
-            color: #333;
-            border: none;
-            border-radius: 25px;
-            padding: 15px 30px;
-            font-size: 1.1em;
-            font-weight: bold;
+            background: var(--lloyds-green);
+            color: var(--lloyds-white);
+            border: 2px solid var(--lloyds-green);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md) var(--spacing-lg);
+            font-size: 0.875rem;
+            font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-family: var(--font-primary);
         }
 
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+            background: var(--lloyds-dark-green);
+            border-color: var(--lloyds-dark-green);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
         }
 
         .btn:active {
-            transform: translateY(-1px);
+            transform: translateY(0);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn.secondary {
+            background: transparent;
+            color: var(--lloyds-green);
+            border-color: var(--lloyds-green);
+        }
+
+        .btn.secondary:hover {
+            background: var(--lloyds-green);
+            color: var(--lloyds-white);
         }
 
         .modal {
@@ -254,86 +413,189 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,0.8);
+            background-color: rgba(0,0,0,0.6);
+            backdrop-filter: blur(4px);
         }
 
         .modal-content {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            margin: 10% auto;
-            padding: 30px;
-            border-radius: 15px;
-            width: 80%;
+            background: var(--lloyds-white);
+            margin: 5% auto;
+            padding: var(--spacing-xxl);
+            border-radius: var(--radius-xl);
+            width: 90%;
             max-width: 600px;
             text-align: center;
-            border: 2px solid #ffd700;
+            box-shadow: var(--shadow-xl);
+            border: 1px solid var(--lloyds-grey-200);
+            color: var(--lloyds-grey-800);
+        }
+
+        .modal-content h2 {
+            color: var(--lloyds-green);
+            margin-bottom: var(--spacing-xl);
+            font-weight: 600;
         }
 
         .close {
-            color: #aaa;
+            color: var(--lloyds-grey-400);
             float: right;
             font-size: 28px;
             font-weight: bold;
             cursor: pointer;
+            transition: color 0.3s ease;
         }
 
         .close:hover {
-            color: #ffd700;
+            color: var(--lloyds-green);
         }
 
         .avatar-selection {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
-            margin: 20px 0;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: var(--spacing-lg);
+            margin: var(--spacing-xl) 0;
         }
 
         .avatar-option {
-            background: rgba(255,255,255,0.1);
-            border: 2px solid transparent;
-            border-radius: 10px;
-            padding: 15px;
+            background: var(--lloyds-grey-50);
+            border: 2px solid var(--lloyds-grey-200);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
             cursor: pointer;
             transition: all 0.3s ease;
+            text-align: center;
         }
 
         .avatar-option:hover,
         .avatar-option.selected {
-            border-color: #ffd700;
-            background: rgba(255,215,0,0.2);
+            border-color: var(--lloyds-green);
+            background: #E8F5E8;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
         }
 
         .trophy-section {
             text-align: center;
-            margin: 30px 0;
+            margin: var(--spacing-xxl) 0;
+            background: var(--lloyds-white);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-xxl);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--lloyds-grey-200);
+            color: var(--lloyds-grey-800);
+        }
+
+        .trophy-section h3 {
+            color: var(--lloyds-green);
+            margin-bottom: var(--spacing-lg);
+            font-weight: 600;
         }
 
         .trophy {
-            font-size: 4em;
-            margin: 10px;
-            animation: rotate 2s infinite linear;
+            font-size: 3rem;
+            margin: var(--spacing-lg);
+            color: var(--lloyds-yellow);
         }
 
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+        #weeklyChampions {
+            color: var(--lloyds-grey-600);
+            font-weight: 500;
         }
 
         .sound-effects {
             display: none;
         }
 
+        /* Responsive Design */
         @media (max-width: 768px) {
+            .container {
+                padding: var(--spacing-md);
+            }
+            
             .header h1 {
-                font-size: 2em;
+                font-size: 2rem;
+            }
+            
+            .header p {
+                font-size: 1rem;
             }
             
             .desk-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: var(--spacing-md);
             }
             
             .answers {
                 grid-template-columns: 1fr;
             }
+            
+            .control-panel {
+                gap: var(--spacing-sm);
+            }
+            
+            .btn {
+                padding: var(--spacing-sm) var(--spacing-md);
+                font-size: 0.75rem;
+            }
+            
+            .stat-card {
+                padding: var(--spacing-lg);
+            }
+            
+            .stat-number {
+                font-size: 1.875rem;
+            }
+            
+            .modal-content {
+                width: 95%;
+                margin: 10% auto;
+                padding: var(--spacing-xl);
+            }
+            
+            .player-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .desk-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .game-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .avatar-selection {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Accessibility improvements */
+        .btn:focus,
+        .desk:focus,
+        .answer-btn:focus,
+        .player-card:focus {
+            outline: 2px solid var(--lloyds-blue);
+            outline-offset: 2px;
+        }
+
+        /* Loading states */
+        .loading {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        /* Success states */
+        .success {
+            border-color: var(--lloyds-light-green) !important;
+            background-color: #E8F5E8 !important;
+        }
+
+        /* Error states */
+        .error {
+            border-color: var(--lloyds-red) !important;
+            background-color: #FFF0F0 !important;
         }
     </style>
 </head>
@@ -341,8 +603,13 @@
     <div class="container">
         <!-- Header -->
         <div class="header">
-            <h1>🐴 Desk Derby: The Lloyds Values Showdown! 🐴</h1>
-            <p>Race to book your desk by mastering Lloyds Banking Group values!</p>
+            <div style="display: flex; align-items: center; justify-content: center; gap: var(--spacing-lg); margin-bottom: var(--spacing-md);">
+                <div style="width: 60px; height: 60px; background: var(--lloyds-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.5rem;">L</div>
+                <div>
+                    <h1>Desk Derby: The Lloyds Values Showdown!</h1>
+                    <p>Race to book your desk by mastering Lloyds Banking Group values!</p>
+                </div>
+            </div>
         </div>
 
         <!-- Game Stats -->
@@ -624,7 +891,7 @@
         // Generate default data when JSON file is not available
         function generateDefaultData() {
             const playerNames = [
-                "Andy", "Piyush", "Tahira", "David", 
+                "Andy", "Piyush", "Tahera", "David", 
                 "Hamza", "Prasad", "Durga"
             ];
             
@@ -708,7 +975,7 @@
                 `;
                 
                 if (gameState.currentPlayer && gameState.currentPlayer.id === player.id) {
-                    playerElement.style.border = '2px solid #ffd700';
+                    playerElement.classList.add('selected');
                 }
                 
                 playersGrid.appendChild(playerElement);
